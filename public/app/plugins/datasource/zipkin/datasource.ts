@@ -75,6 +75,9 @@ function responseToDataQueryResponse(response: { data: ZipkinSpan[] }): DataQuer
             values: response?.data ? [transformResponse(response?.data)] : [],
           },
         ],
+        meta: {
+          preferredVisualisationType: 'trace',
+        },
       }),
     ],
   };
@@ -90,6 +93,9 @@ const emptyDataQueryResponse = {
           values: [],
         },
       ],
+      meta: {
+        preferredVisualisationType: 'trace',
+      },
     }),
   ],
 };
