@@ -58,7 +58,6 @@ import { getTimeZone } from '../profile/state/selectors';
 import { ErrorContainer } from './ErrorContainer';
 import { scanStopAction } from './state/actionTypes';
 import { ExploreGraphPanel } from './ExploreGraphPanel';
-//TODO:unification
 import { TraceView } from './TraceView/TraceView';
 import { SecondaryActions } from './SecondaryActions';
 import { FILTER_FOR_OPERATOR, FILTER_OUT_OPERATOR, FilterItem } from '@grafana/ui/src/components/Table/types';
@@ -405,7 +404,6 @@ export class Explore extends React.PureComponent<ExploreProps, ExploreState> {
                               onStopScanning={this.onStopScanning}
                             />
                           )}
-                          {/* TODO:unification */}
                           {showTrace &&
                             // We expect only one trace at the moment to be in the dataframe
                             // If there is not data (like 404) we show a separate error so no need to show anything here
