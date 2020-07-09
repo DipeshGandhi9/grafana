@@ -5,6 +5,29 @@
 .error-container {
   display: flex;
   flex-direction: row;
+  padding: 10px;
+}
+
+.error-title-container {
+  flex: 1;
+  flex-direction: row;
+
+  & h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+  }
+
+  & h2 {
+    font-size: 35px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  & h6 {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
 }
 
 .error-row {
@@ -37,6 +60,7 @@
 
 .image-box {
   padding: $space-sm;
+  text-align: center;
 }
 
 .left-margin {

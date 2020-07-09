@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { connect, MapStateToProps } from 'react-redux';
 import { NavModel } from '@grafana/data';
 import { config } from '@grafana/runtime';
-import { Icon } from '@grafana/ui';
 import Page from '../Page/Page';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { StoreState } from 'app/types';
@@ -22,55 +21,32 @@ export class ErrorPage extends PureComponent<Props> {
       <Page navModel={navModel}>
         <Page.Contents>
           <div className="page-container page-body">
+            <div className="error-title-container">
+              <h1>Oops!</h1>
+              <h2>We can't seem to find the page you're looking for.</h2>
+              <h6> Error code: 404</h6>
+            </div>
+            <div className="image-box">
+              <img src="public/img/404.svg" width="35%" alt="graph" />
+            </div>
             <div className="panel-container error-container">
-              <div className="error-column graph-box">
-                <div className="error-row">
-                  <div className="error-column error-space-between graph-percentage">
-                    <p>100%</p>
-                    <p>80%</p>
-                    <p>60%</p>
-                    <p>40%</p>
-                    <p>20%</p>
-                    <p>0%</p>
-                  </div>
-                  <div className="error-column image-box">
-                    <img src="public/img/graph404.svg" width="100%" alt="graph" />
-                    <div className="error-row error-space-between">
-                      <p className="graph-text">Then</p>
-                      <p className="graph-text">Now</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="error-column info-box">
-                <div className="error-row current-box">
-                  <p className="current-text">current</p>
-                </div>
-                <div className="error-row" style={{ flex: 1 }}>
-                  <Icon name="minus-circle" className="error-minus" />
-                  <div className="error-column error-space-between error-full-width">
-                    <div className="error-row error-space-between">
-                      <p>Chances you are on the page you are looking for.</p>
-                      <p className="left-margin">0%</p>
-                    </div>
-                    <div>
-                      <h3>Sorry for the inconvenience</h3>
-                      <p>
-                        Please go back to your{' '}
-                        <a href={config.appSubUrl} className="error-link">
-                          home dashboard
-                        </a>{' '}
-                        and try again.
-                      </p>
-                      <p>
-                        If the error persists, seek help on the{' '}
-                        <a href="https://community.grafana.com" target="_blank" className="error-link">
-                          community site
-                        </a>
-                        .
-                      </p>
-                    </div>
-                  </div>
+              <div className="error-row">
+                <div>
+                  <h2>Sorry for the inconvenience</h2>
+                  <p>
+                    Please go back to your{' '}
+                    <a href={config.appSubUrl} className="error-link">
+                      home dashboard
+                    </a>{' '}
+                    and try again.
+                  </p>
+                  <p>
+                    If the error persists, seek help on the{' '}
+                    <a href="https://community.grafana.com" target="_blank" className="error-link">
+                      community site
+                    </a>
+                    .
+                  </p>
                 </div>
               </div>
             </div>
